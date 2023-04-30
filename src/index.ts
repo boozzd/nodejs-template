@@ -1,20 +1,9 @@
-import fastify from "fastify";
-import { handler } from "./handler";
+import { createServer } from 'node:http';
 
-const server = fastify();
+const server = createServer((req, res) => {
+  res.end('Hello World');
+});
 
-server.get("/", handler);
-
-async function start() {
-  try {
-    await server.listen({
-      port: 3000,
-    });
-    console.log("Server listening on port 3000 🚀");
-  } catch (err: unknown) {
-    console.error(err);
-    process.exit(1);
-  }
-}
-
-start();
+server.listen(3000, () => {
+  console.log('Server started on port 3000');
+});

@@ -1,12 +1,13 @@
-import { build } from "esbuild";
+import { build } from 'esbuild';
 
 await build({
-  entryPoints: ["src/index.ts"],
+  entryPoints: ['src/index.ts'],
   bundle: true,
-  platform: "node",
-  target: "esnext",
-  format: "esm",
-  outfile: "dist/index.js",
+  sourcemap: true,
+  platform: 'node',
+  target: 'esnext',
+  format: 'esm',
+  outfile: 'dist/index.mjs',
   banner: {
     js: `
 import { fileURLToPath } from 'url';
