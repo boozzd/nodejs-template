@@ -1,5 +1,4 @@
 import { describe, test, expect } from 'vitest';
-import { bigger } from './index';
 
 describe('test', () => {
   test('test', () => {
